@@ -11,3 +11,5 @@ Moure's law says : Number of transistors doubles every 18months. But that's not 
 In order to go faster with the same hardware we have two solutions : 
 *  parallelism : add more cores but it is very difficult to program (conflicts, sharing resources between threads ..)
 *  Concurrency : management of many tasks in the same time. It enables parallelism. It is exactly like parallelism but without the drawbacks. So concurrency would have : *synchronization and communication between tasks*  [needs more explenation]
+
+test
