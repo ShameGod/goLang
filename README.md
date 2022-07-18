@@ -44,3 +44,26 @@ image.png
 A variable can be stored in two different spaces :  
 - Stack : affected to variables within functions. The memory is deallocated as soon as the function call ends 
 - Heap : Affected to other variables, it is persitant and doesn't end as soon as it becomes useless. It needs to be deallocated manually
+
+### Type conversion in Golang 
+for example 
+![image](https://user-images.githubusercontent.com/42012627/179506443-c14cf386-942f-4e0f-911a-d1d7b1ce7e1d.png)
+This will fail. 
+We need to convert their types with the T() operation : 
+![image](https://user-images.githubusercontent.com/42012627/179506607-796b816d-f411-483b-b5f6-a871bc84a6a7.png)
+
+*note: Strings are immutable*
+
+### Control flow : 
+The control flow is the order in which the statements are exeecuted.
+But it can change if the developer uses some specific statements such as : *if, for loop, switch case, *
+![image](https://user-images.githubusercontent.com/42012627/179508932-5a18929f-d0ce-4a63-a551-b21ae9c61074.png)
+
+![image](https://user-images.githubusercontent.com/42012627/179509237-16959b34-a6f8-4fd2-b26a-47b5722dee25.png)
+
+![image](https://user-images.githubusercontent.com/42012627/179509341-3927d4c9-b0d1-471d-bae5-83abb8d8785d.png)
+
+
+
+
+
