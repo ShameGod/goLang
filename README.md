@@ -63,6 +63,34 @@ But it can change if the developer uses some specific statements such as : *if, 
 
 ![image](https://user-images.githubusercontent.com/42012627/179509341-3927d4c9-b0d1-471d-bae5-83abb8d8785d.png)
 
+#### Arrays :
+Similat to all the languages 
+Except :
+* it is initialized to 0 value initially (0 of the expected type)
+* it has a fixed size 
+
+![image](https://user-images.githubusercontent.com/42012627/180615715-70e8d624-79ce-472a-a80c-7916e2725a43.png)
+this is how we declare an array of size 5 
+
+![image](https://user-images.githubusercontent.com/42012627/180615725-4f82ab34-ec28-475c-b515-389fc466b3c5.png)
+here the "..." mean that we dont specify an exact size to the array 
+
+to iterate over an array in golang : 
+![image](https://user-images.githubusercontent.com/42012627/180615841-c0438daa-5cc8-4d76-993f-a5d735953f93.png)
+with i the index and v the value 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
