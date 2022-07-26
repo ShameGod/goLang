@@ -67,7 +67,7 @@ But it can change if the developer uses some specific statements such as : *if, 
 Similat to all the languages 
 Except :
 * it is initialized to 0 value initially (0 of the expected type)
-* it has a fixed size 
+* it has a fixed size but is not immutable (we can change its values)
 
 ![image](https://user-images.githubusercontent.com/42012627/180615715-70e8d624-79ce-472a-a80c-7916e2725a43.png)
 this is how we declare an array of size 5 
@@ -80,6 +80,37 @@ to iterate over an array in golang :
 with i the index and v the value 
 
 
+#### Slice : 
+It is a window of an array. It has a variable size up to the whole array. 
+
+It is declared like this : 
+![image](https://user-images.githubusercontent.com/42012627/180998811-d3441b4c-ee30-41fd-a042-ed937962dc3b.png)
+
+It is different from arrays because we don't specify the length between the brackets
+
+It has three properties : 
+* **Pointer** thaat indifcates the start of the slice 
+* **The length** of the slice 
+* **The capacity**, the maximum number of elements in the slice. (length - beguining of the slice)
+![image](https://user-images.githubusercontent.com/42012627/180997736-03fd21ef-177a-4cf1-872a-c24e7e87e48a.png)
+
+![image](https://user-images.githubusercontent.com/42012627/180998231-387b66d9-1392-42d6-8248-6e486414db13.png)
+
+**Very important**
+![image](https://user-images.githubusercontent.com/42012627/180998350-1b16e5d7-1e6d-4f72-a82c-b36d684a3fec.png)
+
+![image](https://user-images.githubusercontent.com/42012627/180998671-19ef56cd-5a05-4b96-b9ca-b4e12d994b78.png)
+
+Useful functions 
+* make() that initialize arrays.
+* append() that increases the size of the slice 
+
+
+#### Hash tables : 
+
+Key value pair just like in other languages. See here https://github.com/ShameGod/HashMaps
+
+![image](https://user-images.githubusercontent.com/42012627/181000977-f37b7a4d-02b4-454c-801f-42fbe9e15413.png)
 
 
 
