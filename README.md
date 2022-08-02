@@ -113,6 +113,10 @@ Key value pair just like in other languages. See here https://github.com/ShameGo
 ![image](https://user-images.githubusercontent.com/42012627/181000977-f37b7a4d-02b4-454c-801f-42fbe9e15413.png)
 
 
+#### Maps : 
+
+![image](https://user-images.githubusercontent.com/42012627/182373927-c21497a8-b4df-4402-ab7f-9f95a42c18ee.png)
+
 
 
 
