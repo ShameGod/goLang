@@ -5,6 +5,12 @@ Golang notes from tutorials
 ### object oriented : 
 Golang is an object oriented. Golang doesn't use the term *class* it uses *structs* 
 The structs in Golang are very simplified, it doesn't have **Inheritance**, **constructors** nor **generics**. Which make the golang code simple and quick to run. 
+It compiles directly to machine code : 
+
+![image](https://user-images.githubusercontent.com/42012627/183110023-17b73dac-003f-429b-b889-38efd1d073e6.png)
+
+
+
 ### Concurrency : 
 The motivation of concurrency is the need of speed. Concurrency is here to over come the **performance limitation**. 
 Moure's law says : Number of transistors doubles every 18months. But that's not the case anymore. We arrived to the limits of hardware optimisation (except for the case of quantum computers). 
