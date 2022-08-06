@@ -19,6 +19,14 @@ In order to go faster with the same hardware we have two solutions :
 *  Concurrency : management of many tasks in the same time. It enables parallelism. It is exactly like parallelism but without the drawbacks. So concurrency would have : *synchronization and communication between tasks*  [needs more explenation]
 
 ### Data types :
+
+#### variables : 
+constants : ```const CONSTANT = "constant"```
+
+*it is possible to declare and initialize a variable like this var a = "a". If we want to declare a variable and attribue a value to it later we need to specify the type of the variable. Golang is a statically typed language*
+
+
+
 #### pointers : 
 Which a pointer to an address to data in memory 
 it has two operators : 
@@ -122,6 +130,22 @@ Key value pair just like in other languages. See here https://github.com/ShameGo
 #### Maps : 
 
 ![image](https://user-images.githubusercontent.com/42012627/182373927-c21497a8-b4df-4402-ab7f-9f95a42c18ee.png)
+
+## Booking app : 
+I will be explain the development process of a booking app with Golang : 
+
+### 1 : the main file : 
+
+When we run a go lang application with many files, go looks for a file where it will start running (**entrypoint**) .
+We recognize this file with the function ``` func main() ```
+**Every go application can only have one main function, one entrypoint** 
+
+#### printf : 
+Thanks to this function we can write print code like this : 
+fmt.Printf("we have total of %v and we have %v avaiable", theaterTicekets, remainingTickets)
+the 'v' in %v stands for variable there are other ways to display values such as %s, with s for string .. 
+
+
 
 
 
