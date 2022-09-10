@@ -205,6 +205,19 @@ myMap := make(map[string]string)
 
 ![image](https://user-images.githubusercontent.com/42012627/182373927-c21497a8-b4df-4402-ab7f-9f95a42c18ee.png)
 
+
+#### Structs : 
+We define structs on a **package level** like this : 
+```
+type UserData struct {
+	firstName string
+	lastName  string
+	email     string
+	nbTickets int
+}
+```
+
+
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
 
