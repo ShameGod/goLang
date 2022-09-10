@@ -1,5 +1,5 @@
 # goLang
-Golang notes from tutorials 
+Golang notes from the course : https://www.coursera.org/learn/golang-getting-started/
 
 ## Introduction to Go lang 
 ### object oriented : 
@@ -16,7 +16,10 @@ The motivation of concurrency is the need of speed. Concurrency is here to over 
 Moure's law says : Number of transistors doubles every 18months. But that's not the case anymore. We arrived to the limits of hardware optimisation (except for the case of quantum computers). 
 In order to go faster with the same hardware we have two solutions : 
 *  parallelism : add more cores but it is very difficult to program (conflicts, sharing resources between threads ..)
-*  Concurrency : management of many tasks in the same time. It enables parallelism. It is exactly like parallelism but without the drawbacks. So concurrency would have : *synchronization and communication between tasks*  [needs more explenation]
+*  Concurrency : management of many tasks in the same time. It enables parallelism. It is exactly like parallelism but without the drawbacks. So concurrency would have : *synchronization and communication between tasks*  
+
+![image](https://user-images.githubusercontent.com/42012627/189488950-b3e56c2a-37f8-49b2-8428-7ad89c2778ed.png)
+
 
 ### Data types :
 
