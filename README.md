@@ -50,8 +50,20 @@ this function creats a variable and returns a pointer to this variable instead o
 
 ### Scope of variables : 
 The scope of a variable is the places in the code where the variable can be accessed 
-image.png
 the varaible's scope is organized in go with "{}" they constitute a **block** 
+We can declare package level variables that are accessible to the hole package. **this means that all the files within the same package have access to these variables** 
+But it is always better to declare variables as local as possible. This is because of the memory deallocation and the readiblity of the code 
+
+To summarise we have three types of varible scopes : 
+* Local variables : Within functions or blocks 
+* Package variables : Shared between all the files of the same package 
+* Global variables : Exported variables used between packages. To exporte a variable we start by a capitale letter.
+### Packages : 
+A package contains multiple files. For example a the package main contains many files. The file that has the main() function is the entrypoint. To run the go script we usually use the command go run main.go, we need to add all the files of the package in command. an alternative is to use 
+```
+go run .
+```
+
 
 ### Deallocation of memory : 
 image.png
@@ -80,11 +92,25 @@ But it can change if the developer uses some specific statements such as : *if, 
 
 ![image](https://user-images.githubusercontent.com/42012627/179509341-3927d4c9-b0d1-471d-bae5-83abb8d8785d.png)
 
+#### Loops : 
+Loops in golang are very simple. There is only one type of loops, for.
+When used alone like for {}, it is equivalent to a while(true)
+When used on a slice and array data structure it is used like this 
+```
+for index, booking := range bookings {
+```
+Sometimes we don't need the index variable. And since Go generates an error over non used variables, we can ask Go to ignore it by replacing with '_'.
+
+
+
 #### Arrays :
 Similat to all the languages 
 Except :
 * it is initialized to 0 value initially (0 of the expected type)
 * it has a fixed size but is not immutable (we can change its values)
+
+**to get the length of the array**
+len(arrayName)
 
 ![image](https://user-images.githubusercontent.com/42012627/180615715-70e8d624-79ce-472a-a80c-7916e2725a43.png)
 this is how we declare an array of size 5 
@@ -107,6 +133,10 @@ It is different from arrays because we don't specify the length between the brac
 
 It has three properties : 
 * **Pointer** thaat indifcates the start of the slice 
+
+![image](https://user-images.githubusercontent.com/42012627/189490365-4a1f1f8b-b5dd-42ee-8b00-1f3649c3e35b.png)
+
+
 * **The length** of the slice 
 * **The capacity**, the maximum number of elements in the slice. (length - beguining of the slice)
 ![image](https://user-images.githubusercontent.com/42012627/180997736-03fd21ef-177a-4cf1-872a-c24e7e87e48a.png)
@@ -122,6 +152,36 @@ Useful functions
 * make() that initialize arrays.
 * append() that increases the size of the slice 
 
+#### functions : 
+outside of the main function, declared like this : 
+
+```
+func greetUser(theaterName string, remainingTickets uint, theaterTicekets uint) {
+	fmt.Println("Welcome to ", theaterName, " !")
+	fmt.Printf("we have total of %v places and %v avaiable\n", theaterTicekets, remainingTickets)
+}
+```
+to return a value we can use : 
+```
+func printFirstNames(bookings []string, firstNames []string) []string{
+	for _, booking := range bookings {
+		var names = strings.Fields(booking)
+		firstNames = append(firstNames, names[0])
+	}
+	return firstNames
+}
+```
+It is also possible to return multiple values : 
+
+```
+func validateUser(firstName string, lastName string, email string, nbTickets int, remainingTickets uint) (bool, bool, bool){
+	isValidName := len(firstName) >= 2 && len(lastName) >= 2
+	isValidEmail := strings.Contains(email, "@")
+	isValidTicketNumber := nbTickets < int(remainingTickets) && nbTickets > 0
+	return isValidName, isValidEmail, isValidTicketNumber
+}
+```
+
 
 #### Hash tables : 
 
@@ -131,6 +191,17 @@ Key value pair just like in other languages. See here https://github.com/ShameGo
 
 
 #### Maps : 
+A map can be delcared by type like this : 
+
+```
+
+var myMap map[string]string
+```
+
+or creating an empty map directly 
+```
+myMap := make(map[string]string)
+```
 
 ![image](https://user-images.githubusercontent.com/42012627/182373927-c21497a8-b4df-4402-ab7f-9f95a42c18ee.png)
 
@@ -147,8 +218,19 @@ We recognize this file with the function ``` func main() ```
 Thanks to this function we can write print code like this : 
 fmt.Printf("we have total of %v and we have %v avaiable", theaterTicekets, remainingTickets)
 the 'v' in %v stands for variable there are other ways to display values such as %s, with s for string .. 
+another usefull tip is to use %T to get the Type of the variable passed as an argument
 
+The fmt package handles input and output
+##### Scan function : 
+to read the input of the user we use the function scan like this. fmt.Scan(&input)
+The scan function takes what the user types and puts in a place in memory. The Scan function then takes the address of this input and put it in the pointer of the variable entered as an argument.
 
+#### variable types : 
+we can either write a variable like : var a = 4 and golang will imply that it is an int. or we can specify the type for more precision. For example var a int32 = 4
+
+![image](https://user-images.githubusercontent.com/42012627/189489919-879d57a8-94e2-4e96-9cd4-8b5b4732feac.png)
+
+We can also declare the variable a like thuis : a := 4
 
 
 
