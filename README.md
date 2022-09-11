@@ -109,6 +109,7 @@ for example
 ![image](https://user-images.githubusercontent.com/42012627/179506443-c14cf386-942f-4e0f-911a-d1d7b1ce7e1d.png)
 This will fail. 
 We need to convert their types with the T() operation : 
+
 ![image](https://user-images.githubusercontent.com/42012627/179506607-796b816d-f411-483b-b5f6-a871bc84a6a7.png)
 
 *note: Strings are immutable*
@@ -138,13 +139,17 @@ Except :
 len(arrayName)
 
 ![image](https://user-images.githubusercontent.com/42012627/180615715-70e8d624-79ce-472a-a80c-7916e2725a43.png)
+
 this is how we declare an array of size 5 
 
 ![image](https://user-images.githubusercontent.com/42012627/180615725-4f82ab34-ec28-475c-b515-389fc466b3c5.png)
+
 here the "..." mean that we dont specify an exact size to the array 
 
 to iterate over an array in golang : 
+
 ![image](https://user-images.githubusercontent.com/42012627/180615841-c0438daa-5cc8-4d76-993f-a5d735953f93.png)
+
 with i the index and v the value 
 
 
@@ -152,6 +157,7 @@ with i the index and v the value
 It is a window of an array. It has a variable size up to the whole array. 
 
 It is declared like this : 
+
 ![image](https://user-images.githubusercontent.com/42012627/180998811-d3441b4c-ee30-41fd-a042-ed937962dc3b.png)
 
 **Slices are windows on an underlying array** 
@@ -166,11 +172,13 @@ It has three properties :
 
 * **The length** of the slice 
 * **The capacity**, the maximum number of elements in the slice. (length - beguining of the slice)
+
 ![image](https://user-images.githubusercontent.com/42012627/180997736-03fd21ef-177a-4cf1-872a-c24e7e87e48a.png)
 
 ![image](https://user-images.githubusercontent.com/42012627/180998231-387b66d9-1392-42d6-8248-6e486414db13.png)
 
 **Very important**
+
 ![image](https://user-images.githubusercontent.com/42012627/180998350-1b16e5d7-1e6d-4f72-a82c-b36d684a3fec.png)
 
 ![image](https://user-images.githubusercontent.com/42012627/180998671-19ef56cd-5a05-4b96-b9ca-b4e12d994b78.png)
@@ -185,9 +193,11 @@ In go lang the parameters are passed as call by value. So the parameters passed 
 this will return 2 : 
 
 ![image](https://user-images.githubusercontent.com/42012627/189536558-aa1b6fca-b78d-47a9-ba0f-33b6577bf8aa.png)
+
 This is great but this call by value solution has a drawback. Making a copy of each argment takes a certain amout of type. For complex structs it can be significative. To avoid this lapse of time we can use call by referance arguments. like this : 
 
 ![image](https://user-images.githubusercontent.com/42012627/189536888-aa07669b-d298-42a4-9e62-fee6794cf4e8.png)
+
 **important: no need to do this for slices they already are pointers.**
 outside of the main function, declared like this : 
 
@@ -298,8 +308,13 @@ err := json.Unmarshal(barr, userData)
 ```
 the Json needs to fit the userData, they need to have the same attributes.
 
-### IO utils to handle files : 
-We use the package io/ioutil, I used to write a cfile like 
+### Equivalent of classes in golang :
+
+![image](https://user-images.githubusercontent.com/42012627/189546801-ecf79fba-0cd9-404a-8616-abe09bcf7dfa.png)
+
+by adding the (mi MyInt) in my function, I am saying that the function Double is only available for the MyInt type.
+
+In the picture above there is an implicit parameter, mi. We do not add a parametre before the v.Double() but the real parameter is the " v ". 
 
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
