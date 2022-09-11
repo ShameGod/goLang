@@ -116,11 +116,6 @@ We need to convert their types with the T() operation :
 ### Control flow : 
 The control flow is the order in which the statements are exeecuted.
 But it can change if the developer uses some specific statements such as : *if, for loop, switch case, *
-![image](https://user-images.githubusercontent.com/42012627/179508932-5a18929f-d0ce-4a63-a551-b21ae9c61074.png)
-
-![image](https://user-images.githubusercontent.com/42012627/179509237-16959b34-a6f8-4fd2-b26a-47b5722dee25.png)
-
-![image](https://user-images.githubusercontent.com/42012627/179509341-3927d4c9-b0d1-471d-bae5-83abb8d8785d.png)
 
 #### Loops : 
 Loops in golang are very simple. There is only one type of loops, for.
@@ -265,6 +260,26 @@ Or we can initialise the structure using default field values with the function 
 userData := new(UserData)
 ```
 
+### Trading Data : 
+Go lang has a way of organising traded data between services. 
+**RFC : Request For Comment** defines a protocol of data format
+Examples of RFCs are : Json, Avro, Xml... 
+golang has packages to encode and decode data using these protocols. 
+#### Marshalling and Unmarshalling Json : 
+Mashalling means converting golang struct to json object. 
+we can do this like this : 
+```
+barr, err := json.Marshal(userData)
+```
+barr for binary array will contain the binaries for a json. Err If something wrong happens if nothing happens it takes a Nil value.
+
+We do an unmarshalling like this 
+```
+var userData UserData 
+
+err := json.Unmarshal(barr, userData)
+```
+the Json needs to fir the userData, they need to have the same attributes.
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
 
@@ -291,9 +306,6 @@ we can either write a variable like : var a = 4 and golang will imply that it is
 ![image](https://user-images.githubusercontent.com/42012627/189489919-879d57a8-94e2-4e96-9cd4-8b5b4732feac.png)
 
 We can also declare the variable a like thuis : a := 4
-
-
-
 
 
 
