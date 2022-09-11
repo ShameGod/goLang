@@ -52,7 +52,13 @@ constants : ```const CONSTANT = "constant"```
 
 *it is possible to declare and initialize a variable like this var a = "a". If we want to declare a variable and attribue a value to it later we need to specify the type of the variable. Golang is a statically typed language*
 
-
+#### type casting : 
+The type casting is the convertion of a data type to another. 
+Unlike Java that has an implicite type conversion, Golang requires an explicite type conversion. We do this like this 
+```
+var simpleInt int64 = 13
+var simpleFloat float64 = float64(simpleInt)
+```
 
 #### pointers : 
 Which a pointer to an address to data in memory 
@@ -153,6 +159,8 @@ It is a window of an array. It has a variable size up to the whole array.
 It is declared like this : 
 ![image](https://user-images.githubusercontent.com/42012627/180998811-d3441b4c-ee30-41fd-a042-ed937962dc3b.png)
 
+**Slices are windows on an underlying array** 
+
 It is different from arrays because we don't specify the length between the brackets
 
 It has three properties : 
@@ -214,11 +222,10 @@ Key value pair just like in other languages. See here https://github.com/ShameGo
 ![image](https://user-images.githubusercontent.com/42012627/181000977-f37b7a4d-02b4-454c-801f-42fbe9e15413.png)
 
 
-#### Maps : 
+##### Maps : 
+A map is the implementation of hashtables in GoLang.
 A map can be delcared by type like this : 
-
 ```
-
 var myMap map[string]string
 ```
 
@@ -226,11 +233,15 @@ or creating an empty map directly
 ```
 myMap := make(map[string]string)
 ```
+To iterate over a map : 
+
+![image](https://user-images.githubusercontent.com/42012627/189531301-ed916aa3-7ae6-4c69-b12d-b8be1edac214.png)
 
 ![image](https://user-images.githubusercontent.com/42012627/182373927-c21497a8-b4df-4402-ab7f-9f95a42c18ee.png)
 
 
 #### Structs : 
+Groups related variables together (like name, address, email) and can have variables of multiple types 
 We define structs on a **package level** like this : 
 ```
 type UserData struct {
@@ -248,6 +259,10 @@ var userData = UserData {
 		email: email,
 		nbTickets: nbTickets,
 	}
+```
+Or we can initialise the structure using default field values with the function new()
+```
+userData := new(UserData)
 ```
 
 ## Booking app : 
