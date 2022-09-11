@@ -180,6 +180,15 @@ Useful functions
 * append() that increases the size of the slice 
 
 #### functions : 
+**Super important** : 
+In go lang the parameters are passed as call by value. So the parameters passed to the functions are deep copied to its arguments. 
+this will return 2 : 
+
+![image](https://user-images.githubusercontent.com/42012627/189536558-aa1b6fca-b78d-47a9-ba0f-33b6577bf8aa.png)
+This is great but this call by value solution has a drawback. Making a copy of each argment takes a certain amout of type. For complex structs it can be significative. To avoid this lapse of time we can use call by referance arguments. like this : 
+
+![image](https://user-images.githubusercontent.com/42012627/189536888-aa07669b-d298-42a4-9e62-fee6794cf4e8.png)
+**important: no need to do this for slices they already are pointers.**
 outside of the main function, declared like this : 
 
 ```
@@ -209,6 +218,10 @@ func validateUser(firstName string, lastName string, email string, nbTickets int
 }
 ```
 
+##### Well written functions : 
+* Understandability : If someOne is looking for a feature (for example the bluring) he can find it easly
+* Give functions a good name 
+* 
 
 #### Hash tables : 
 
