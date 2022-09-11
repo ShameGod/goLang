@@ -41,6 +41,10 @@ func concurrentFunction(){
 	wg.Done()
 }
 ```
+
+**the difference between golang and other languages with concurrency, is that Go lang uses an abstraction of real OS threads called go routines.**
+**If the Computer has 4 cores it has 4 threads, but we can create thousands of gorroutines**
+
 ### Data types :
 
 #### variables : 
@@ -245,9 +249,6 @@ var userData = UserData {
 		nbTickets: nbTickets,
 	}
 ```
-
-## Concurrency sith Goroutine :
-
 
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
