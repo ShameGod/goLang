@@ -216,6 +216,17 @@ type UserData struct {
 	nbTickets int
 }
 ```
+To instantiate a Struct we do this : 
+```
+var userData = UserData {
+		firstName: firstName,
+		lastName: lastName,
+		email: email,
+		nbTickets: nbTickets,
+	}
+```
+
+## Concurrency sith Goroutine :
 
 
 ## Booking app : 
