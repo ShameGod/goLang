@@ -315,6 +315,17 @@ the Json needs to fit the userData, they need to have the same attributes.
 by adding the (mi MyInt) in my function, I am saying that the function Double is only available for the MyInt type.
 
 In the picture above there is an implicit parameter, mi. We do not add a parametre before the v.Double() but the real parameter is the " v ". 
+```
+func (user UserData) sendEmail() {
+	time.Sleep(1 * time.Second)
+	fileName := fmt.Sprintf("bill of %v %v", user.firstName, user.lastName)
+	err := ioutil.WriteFile(fileName, []byte(user.email), 0777)
+	fmt.Print(err)
+	fmt.Println("#####################################")
+	fmt.Printf("Sending the email to the user %v %v", user.firstName, user.lastName)
+	fmt.Println("#####################################")
+}
+```
 
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
