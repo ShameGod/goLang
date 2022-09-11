@@ -327,6 +327,9 @@ func (user UserData) sendEmail() {
 }
 ```
 
+#### Encapsulation : 
+It is possible to do encapsulation by exporting functions giving access to variables, by setting a capital letter. 
+
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
 
