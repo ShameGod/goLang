@@ -279,7 +279,11 @@ var userData UserData
 
 err := json.Unmarshal(barr, userData)
 ```
-the Json needs to fir the userData, they need to have the same attributes.
+the Json needs to fit the userData, they need to have the same attributes.
+
+### IO utils to handle files : 
+We use the package io/ioutil, I used to write a cfile like 
+
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
 
