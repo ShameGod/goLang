@@ -20,7 +20,27 @@ In order to go faster with the same hardware we have two solutions :
 
 ![image](https://user-images.githubusercontent.com/42012627/189488950-b3e56c2a-37f8-49b2-8428-7ad89c2778ed.png)
 
+ti charge a new thread to do something we do this 
+```
+go concurrentFunction()
+```
+if the main thread finishes executing its lines of code it exits and the goroutine we started for the concurrentFunction never gets to finish being executed.
+to do that we do : 
+```
+var wg = sync.WaitGroup{}
+main {
+	..... code .....
+	wg.Add(1)
+	go concurrentFunction()
+	..... code .....
+	wg.Wait()
+}
 
+func concurrentFunction(){
+	..... logic code .....
+	wg.Done()
+}
+```
 ### Data types :
 
 #### variables : 
