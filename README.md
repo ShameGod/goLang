@@ -221,7 +221,11 @@ func validateUser(firstName string, lastName string, email string, nbTickets int
 ##### Well written functions : 
 * Understandability : If someOne is looking for a feature (for example the bluring) he can find it easly
 * Give functions a good name 
-* 
+* Function do only one action 
+* Keep functions short
+
+##### first class values : 
+From functional programming and it means treating a function as a normal variable. 
 
 #### Hash tables : 
 
