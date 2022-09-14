@@ -324,6 +324,18 @@ func (user UserData) sendEmail() {
 #### Encapsulation : 
 It is possible to do encapsulation by exporting functions giving access to variables, by setting a capital letter. 
 
+#### Polymorphisme : 
+A polymorphique function is a function that **does two different operations according to the input argument**. For example a function area() that calculates the area of a form. It is going to do different operations according to its input (a triangle, a square, a circle ...) 
+This aspect that is very present in OOP requires inheritance and overriding. 
+In order to get Polymorphisme we use **interfaces**
+
+#### Interfaces : 
+they have the same definition as the Java interfaces. **Used to express conceptual similarity between types**
+They define a list of methods. All the types that have **ALL** these methods are concidered of the type of the interface. 
+If a define an interface called shape2D with two methods, area and perimeter. 
+if the types triangle and circle implemente these two methods they are concidered of type shape2D 
+
+
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
 
