@@ -88,6 +88,9 @@ To summarise we have three types of varible scopes :
 * Local variables : Within functions or blocks 
 * Package variables : Shared between all the files of the same package 
 * Global variables : Exported variables used between packages. To exporte a variable we start by a capitale letter.
+
+*note: Strings are immutable*
+
 ### Packages : 
 A package contains multiple files. For example a the package main contains many files. The file that has the main() function is the entrypoint. To run the go script we usually use the command go run main.go, we need to add all the files of the package in command. an alternative is to use 
 ```
@@ -104,15 +107,6 @@ A variable can be stored in two different spaces :
 - Stack : affected to variables within functions. The memory is deallocated as soon as the function call ends 
 - Heap : Affected to other variables, it is persitant and doesn't end as soon as it becomes useless. It needs to be deallocated manually
 
-### Type conversion in Golang 
-for example 
-![image](https://user-images.githubusercontent.com/42012627/179506443-c14cf386-942f-4e0f-911a-d1d7b1ce7e1d.png)
-This will fail. 
-We need to convert their types with the T() operation : 
-
-![image](https://user-images.githubusercontent.com/42012627/179506607-796b816d-f411-483b-b5f6-a871bc84a6a7.png)
-
-*note: Strings are immutable*
 
 ### Control flow : 
 The control flow is the order in which the statements are exeecuted.
