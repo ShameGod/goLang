@@ -347,6 +347,19 @@ func (t Triangle) Perimeter() float 64 {....}
 That is it, the class Triangle satisfies the shape2D interface.
 This is not declared explicitly golang just understands that you meant to set Triangle as a shape2D 
 
+##### Concrete vs Interface types : 
+An interface has two unknown thigs, its exact type and its value. For example shape2D has an unknown type and an unknown value. For example : 
+```
+type shape2D interface {
+	Area() float64
+	Perimeter() float64
+}
+var s shaped2D
+t :=  new(Triangle)
+s = t
+```
+the interface s has now a type but No value 
+
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
 
