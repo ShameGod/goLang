@@ -3,7 +3,7 @@ Golang notes from the course : https://www.coursera.org/learn/golang-getting-sta
 
 ## Introduction to Go lang 
 ### object oriented : 
-Golang is an object oriented. Golang doesn't use the term *class* it uses *structs* 
+Golang is NOT an object oriented. 
 The structs in Golang are very simplified, it doesn't have **Inheritance**, **constructors** nor **generics**. Which make the golang code simple and quick to run. 
 It compiles directly to machine code : 
 
