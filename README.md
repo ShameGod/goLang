@@ -335,6 +335,17 @@ They define a list of methods. All the types that have **ALL** these methods are
 If a define an interface called shape2D with two methods, area and perimeter. 
 if the types triangle and circle implemente these two methods they are concidered of type shape2D 
 
+```
+type shape2D interface {
+	Area() float64
+	Perimeter() float64
+}
+type Triangle{....}
+func (t Triangle) Area() float 64 {....}
+func (t Triangle) Perimeter() float 64 {....}
+```
+That is it, the class Triangle satisfies the shape2D interface.
+This is not declared explicitly golang just understands that you meant to set Triangle as a shape2D 
 
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
