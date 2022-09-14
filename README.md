@@ -358,7 +358,16 @@ var s shaped2D
 t :=  new(Triangle)
 s = t
 ```
-the interface s has now a type but No value 
+the interface s has now a type but No value. **it is still possible to call the speak() function**
+
+##### Interfaces usecases : 
+* a function which takes multiple types of parameter
+* Empty interface is an interface that specifies no methods and that every type satisfies for example **rare syntax** :
+```
+func PrintMe(val interface{}){
+	fmt.PringIn(val)
+}
+```
 
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
