@@ -320,6 +320,16 @@ func (user UserData) sendEmail() {
 	fmt.Println("#####################################")
 }
 ```
+#### Error handling : 
+Many go function return an error as a second argument. It is necessary to handle them like this : 
+
+```
+f, err := os.Open("file.txt")
+if err != nil {
+	fmt.print(err)
+	return
+}
+```
 
 #### Encapsulation : 
 It is possible to do encapsulation by exporting functions giving access to variables, by setting a capital letter. 
@@ -404,6 +414,14 @@ func DrawShape(s Shape2D){
 	case Triangle : 
 		DrawTriangle()
 	}
+}
+```
+
+##### Commun example of interface use 
+Many functions built in go packages, return an Error interface defined like this : 
+```
+type error interface {
+	Error() string 
 }
 ```
 
