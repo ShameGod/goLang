@@ -11,39 +11,6 @@ It compiles directly to machine code :
 
 
 
-### Concurrency : 
-The motivation of concurrency is the need of speed. Concurrency is here to over come the **performance limitation**. 
-Moure's law says : Number of transistors doubles every 18months. But that's not the case anymore. We arrived to the limits of hardware optimisation (except for the case of quantum computers). 
-In order to go faster with the same hardware we have two solutions : 
-*  parallelism : add more cores but it is very difficult to program (conflicts, sharing resources between threads ..)
-*  Concurrency : management of many tasks in the same time. It enables parallelism. It is exactly like parallelism but without the drawbacks. So concurrency would have : *synchronization and communication between tasks*  
-
-![image](https://user-images.githubusercontent.com/42012627/189488950-b3e56c2a-37f8-49b2-8428-7ad89c2778ed.png)
-
-ti charge a new thread to do something we do this 
-```
-go concurrentFunction()
-```
-if the main thread finishes executing its lines of code it exits and the goroutine we started for the concurrentFunction never gets to finish being executed.
-to do that we do : 
-```
-var wg = sync.WaitGroup{}
-main {
-	..... code .....
-	wg.Add(1)
-	go concurrentFunction()
-	..... code .....
-	wg.Wait()
-}
-
-func concurrentFunction(){
-	..... logic code .....
-	wg.Done()
-}
-```
-
-**the difference between golang and other languages with concurrency, is that Go lang uses an abstraction of real OS threads called go routines.**
-**If the Computer has 4 cores it has 4 threads, but we can create thousands of gorroutines**
 
 ### Data types :
 
@@ -424,6 +391,41 @@ type error interface {
 	Error() string 
 }
 ```
+
+### Concurrency : 
+The motivation of concurrency is the need of speed. Concurrency is here to over come the **performance limitation**. 
+Moure's law says : Number of transistors doubles every 18months. But that's not the case anymore. We arrived to the limits of hardware optimisation (except for the case of quantum computers). 
+In order to go faster with the same hardware we have two solutions : 
+*  parallelism : Depends on the hardware, 4 cores => 4 parallel tasks. It is very difficult to program (conflicts, sharing resources between threads ..) 
+*  Concurrency : management of many tasks in the same time. It enables parallelism. It is exactly like parallelism but without the drawbacks. So concurrency would have : *synchronization and communication between tasks*  
+
+![image](https://user-images.githubusercontent.com/42012627/189488950-b3e56c2a-37f8-49b2-8428-7ad89c2778ed.png)
+
+ti charge a new thread to do something we do this 
+```
+go concurrentFunction()
+```
+if the main thread finishes executing its lines of code it exits and the goroutine we started for the concurrentFunction never gets to finish being executed.
+to do that we do : 
+```
+var wg = sync.WaitGroup{}
+main {
+	..... code .....
+	wg.Add(1)
+	go concurrentFunction()
+	..... code .....
+	wg.Wait()
+}
+
+func concurrentFunction(){
+	..... logic code .....
+	wg.Done()
+}
+```
+
+**the difference between golang and other languages with concurrency, is that Go lang uses an abstraction of real OS threads called go routines.**
+**If the Computer has 4 cores it has 4 threads, but we can create thousands of gorroutines**
+
 
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
