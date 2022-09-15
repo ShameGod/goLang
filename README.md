@@ -378,7 +378,34 @@ func PrintMe(val interface{}){
 }
 ```
 
+###### Type assersion : 
+Sometimes we need to know the exact type of an interface in a function not like the IsTooBig() function. Like I want to take any shape2D but I will call type specific functions 
 
+```
+func DrawShape(s Shape2D){
+	rect, ok := s.(Rectangle)
+	if ok{
+		DrawRectangle()
+	}
+	tri, ok := s.(Triangle)
+	if ok{
+		DrawTriangle()
+	}
+}
+```
+
+But there are eventually too much strcuts that satisfy the interface. We can use the switch method to make it easier
+
+```
+func DrawShape(s Shape2D){
+	swich := sch := s.(type){
+	case Rectangle :
+		DrawRectangle()
+	case Triangle : 
+		DrawTriangle()
+	}
+}
+```
 
 ## Booking app : 
 I will be explain the development process of a booking app with Golang : 
