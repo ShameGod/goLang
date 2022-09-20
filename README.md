@@ -438,7 +438,7 @@ func concurrentFunction(){
 
 ![image](https://user-images.githubusercontent.com/42012627/191314619-fbe1ee62-4dce-47b7-92e9-f1c0c5367a20.png)
 
-**Threads** : Before we only had prosses. The problem with them is that swiching the context takes too much time (reading from memory). A process contains multiple threads. the threads share context which makes thread switching quicker than process switching.
+**Threads** : Before we only had prosses. The problem with them is that swiching the context takes too much time (reading from memory). A process contains multiple threads. the threads share some of their context, which makes thread switching quicker than process switching. The yellow part is shared between threads and the green part is specific to the thread 
 
 ![image](https://user-images.githubusercontent.com/42012627/191316362-b170c9cd-2dc0-4ba4-95f3-db1f05b7a4df.png)
 
@@ -453,9 +453,19 @@ We have a main thread (1 thread in the processor). So the OS schedules the main 
 ![image](https://user-images.githubusercontent.com/42012627/191318314-b43bf5ad-b6d3-40fd-870b-273abc021f7a.png)
 
 
+Goroutines are better than threads for the following reasons :
 
+![image](https://user-images.githubusercontent.com/42012627/191325098-c83d9b82-a5c7-498a-ba04-2b7ed0b50d06.png)
 
+(source : [geeks4geeks](https://www.geeksforgeeks.org/golang-goroutine-vs-thread/))
 
+### Interleaving and race condition : 
+When something crashes in the app, we can refer to the **control flow** to know where it crashed exactly and the lines that were runned before that. But when we use concurrency it gets complicated. **We can't predict the order of multiple concurrent operations**. This problem is called **interleaving**.
+A program has to not depend on the order of concurency, otherwise it will be in **race condition**. The code below is a race condition
+
+![image](https://user-images.githubusercontent.com/42012627/191327049-cf71bcb6-a362-4fe9-b2c7-498ead639f0d.png)
+
+This happens because the tasks don't communicate. Goroutines communicate easier than threads. 
 
 
 
