@@ -425,17 +425,35 @@ func concurrentFunction(){
 
 **the difference between golang and other languages with concurrency, is that Go lang uses an abstraction of real OS threads called go routines.**
 **If the Computer has 4 cores it has 4 threads, but we can create thousands of gorroutines**
-## ___________________________________________________________________________ Concurrency 2 : depper ____________________________________________________
+## ___________________________ Concurrency 2 : depper _____________
 
 ### Definitions and basics : 
 **a process** : is an instance of a running program. Every process has **its own** memory, some code, registers(super fast memories), program counter (tell the process what's the next action he is going to execute )
+
 **Operating System** : the main goal of an OS is to allow many processes to execute concurrently. To do that the OS switches quickly between process. For example linux allows a process to acces the CPU for an average of **20ms** it switches so quickly that we feel like it is parallel 
+
 **scheduling** : it is the order in which the processes are run, there many scheduling algrithmes. The basic one is the round and robin. Other algorithms take priority in count for the scheduling. **Scheduling is the main task in OS**
+
 **context switch** : it is the action of changing the executing process. When we stop a process A to start a process B, we save its state(memory, code, register..) where we arrived that is called a **process Context** in the memory. The OS does the context switch (The Kernel which is the code of the OS does that).  
 
 ![image](https://user-images.githubusercontent.com/42012627/191314619-fbe1ee62-4dce-47b7-92e9-f1c0c5367a20.png)
 
-**Threads** : 
+**Threads** : Before we only had prosses. The problem with them is that swiching the context takes too much time (reading from memory). A process contains multiple threads. the threads share context which makes thread switching quicker than process switching.
+
+![image](https://user-images.githubusercontent.com/42012627/191316362-b170c9cd-2dc0-4ba4-95f3-db1f05b7a4df.png)
+
+**Goroutines** : 
+we can have multiple goroutines in the same thread. We put many goroutines inside the main thread(when we only have one thread in a process). It is the Go Runtime Scheduler that switches between goroutines.
+
+![image](https://user-images.githubusercontent.com/42012627/191316934-11e40f74-8ac8-45c7-966a-32342e8f9d9c.png)
+
+The scheduling of goroutines : 
+We have a main thread (1 thread in the processor). So the OS schedules the main threads. Every main thread has a Logical Processor. The the GRS(Go Runtime Scheduler) runs on the Logical processor to schedules the Goroutines. In order to do parallelism + concurrency, we add more logical processors according to the number of Cores that we have. **The programmer can change the number of Logical Processor (by default 1)** 
+
+![image](https://user-images.githubusercontent.com/42012627/191318314-b43bf5ad-b6d3-40fd-870b-273abc021f7a.png)
+
+
+
 
 
 
