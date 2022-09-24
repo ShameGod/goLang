@@ -438,7 +438,7 @@ func concurrentFunction(){
 
 ![image](https://user-images.githubusercontent.com/42012627/191314619-fbe1ee62-4dce-47b7-92e9-f1c0c5367a20.png)
 
-**Threads** : Before we only had prosses. The problem with them is that swiching the context takes too much time (reading from memory). A process contains multiple threads. the threads share some of their context, which makes thread switching quicker than process switching. The yellow part is shared between threads and the green part is specific to the thread 
+**Threads** : Before we only had prosses and the problem with them is that swiching the context takes too much time (reading from memory). A process contains multiple threads. the threads share some of their context, which makes thread switching quicker than process switching. The yellow part is shared between threads and the green part is specific to the thread 
 
 ![image](https://user-images.githubusercontent.com/42012627/191316362-b170c9cd-2dc0-4ba4-95f3-db1f05b7a4df.png)
 
