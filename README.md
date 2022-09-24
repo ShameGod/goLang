@@ -467,7 +467,25 @@ A program has to not depend on the order of concurency, otherwise it will be in 
 
 This happens because the tasks don't communicate. Goroutines communicate easier than threads. 
 
+### Wait groups : 
+There is a package called sync that provides functions to do synchronize goroutines. *sync.WaitGroup* forces a goroutines for other goroutines to finish. It is possible to wait on more than one goroutine. 
 
+```
+func createFile(wg *sync.WaitGroup){ 
+   err := ioutil.WriteFile(fileName, []byte(user.email), 0777)
+   fmt.Print(err)
+   wg.Done()
+}
+
+func main(){
+	var wg Synch.WaitGroup
+	wg.Add(1)
+	go createFile(&wg)
+	wg.Wait()
+	fmt.Println("the file was created")
+
+}
+```
 
 
 
