@@ -119,7 +119,9 @@ It is a window of an array. It has a variable size up to the whole array.
 
 It is declared like this : 
 
-![image](https://user-images.githubusercontent.com/42012627/180998811-d3441b4c-ee30-41fd-a042-ed937962dc3b.png)
+```
+var slice []int
+```
 
 **Slices are windows on an underlying array** 
 
