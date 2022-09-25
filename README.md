@@ -493,7 +493,7 @@ func main(){
 So far we have noticed that goroutines can only receive data in the beguining (passed as arguments). But thanks to channels, it is possible for goroutines to send and receive data during their execution. **channels are typed**. 
 
 ```
-func prod(a int, b int, chan c){
+func prod(a int, b int, c chan int){
 	c <- a * b 
 }
 func main(){
