@@ -468,7 +468,7 @@ A program has to not depend on the order of concurency, otherwise it will be in 
 This happens because the tasks don't communicate. Goroutines communicate easier than threads. 
 
 ### Wait groups : 
-There is a package called sync that provides functions to do synchronize goroutines. *sync.WaitGroup* forces a goroutines for other goroutines to finish. It is possible to wait on more than one goroutine. 
+There is a package called sync that provides functions to synchronize goroutines. *sync.WaitGroup* forces a goroutine to wait for other goroutines to finish. It is possible to wait on more than one goroutine. 
 
 ```
 func createFile(wg *sync.WaitGroup){ 
@@ -487,7 +487,24 @@ func main(){
 }
 ```
 
+### Channels : 
+So far we have noticed that goroutines can only receive data in the beguining (passed as arguments). But thanks to channels, it is possible for goroutines to send and receive data during their execution. **channels are typed**. 
 
+```
+func prod(a int, b int, chan c){
+	c <- a * b 
+}
+func main(){
+	c := make(chan int)
+	go prod(1,2,c)
+	go prod(4,5,c) 
+	a := <- c
+	b := <- c
+	fmt.Println(a * b)
+}
+```
+
+**When channels are executing, a synchronization is done implicitly**. when a goroutine sends somethink to a channel, it is blocked until an other goroutine receives data from that channel. 
 
 
 
