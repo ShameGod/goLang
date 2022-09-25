@@ -504,7 +504,24 @@ func main(){
 }
 ```
 
-**When channels are executing, a synchronization is done implicitly**. when a goroutine sends somethink to a channel, it is blocked until an other goroutine receives data from that channel. 
+**When channels are executing, a synchronization is done implicitly. when a goroutine sends somethink to a channel, it is blocked until an other goroutine receives data from that channel.**
+
+```
+func prod(a int, b int, chan c){
+	c <- a * b 
+	//This goroutine will be blocked untill another goroutine receives the int sent into the channel
+	fmt.Printf("the result of the product is %v", a*b)
+}
+func main(){
+	c := make(chan int)
+	go prod(1,2,c)
+	a := <- c // the main goroutine will be blocked untill it receives some data 
+	fmt.Println(a)
+}
+```
+
+### Buffered channels : 
+It it possible to make goroutines communicate without synchronization. By fixing a buffer size, the goroutine sending values to channels will continue to run. It will be blocked if the number of values it sent has reached the buffer's capacity. The capacity of the buffer is precised when calling the *make()* function
 
 
 
