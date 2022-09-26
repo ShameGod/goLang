@@ -64,7 +64,7 @@ A package contains multiple files. For example a the package main contains many 
 go run .
 ```
 
-### Regular operations :
+### common operations :
 
 #### sort array :
 *requires the sort package*
@@ -535,7 +535,11 @@ It it possible to make goroutines communicate without synchronization. By fixing
 
 
 
+## Common erros : 
 
+### fatal error: all goroutines are asleep - deadlock
+This happens when the main goroutine finishes executing but the other goroutines didn't finish. 
+It happened to me because I forgor to add the **&** to the **wg** variable of type WaitGroup
 
 
 
