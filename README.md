@@ -542,6 +542,7 @@ func main(){
 It it possible to make goroutines communicate without synchronization. By fixing a buffer size, the goroutine sending values to channels will continue to run. It will be blocked if the number of values it sent has reached the buffer's capacity. The capacity of the buffer is precised when calling the *make()* function
 
 ### Receive from multiple channels whith select 
+abort
 ```
 for{
   select{
@@ -553,6 +554,19 @@ for{
 }
 ```
 
+default pattern
+```
+for{
+  select{
+    case a <- c1:
+      fmt.Print(a)
+    case b <- c2:
+      fmt.Print(b)
+    default:
+      fmt.Print("still waiting for a result")
+  }
+}
+```
 
 ## Common erros : 
 
