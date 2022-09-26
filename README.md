@@ -72,6 +72,12 @@ go run .
 sort.Ints(numbers)
 ```
 
+#### merge to slices 
+*it is important to add the "..."* 
+```
+slice = append(slice, slice2...)
+```
+
 ### Deallocation of memory : 
 image.png
 For example this function f(), can be run 1M times. And if the variable x doesn't get deallocated it will be created 1M times. 
