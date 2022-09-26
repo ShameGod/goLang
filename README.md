@@ -552,6 +552,12 @@ The fmt package handles input and output
 ##### Scan function : 
 to read the input of the user we use the function scan like this. fmt.Scan(&input)
 The scan function takes what the user types and puts in a place in memory. The Scan function then takes the address of this input and put it in the pointer of the variable entered as an argument.
+**very important** : **the scan function can only take one word, as soon as the user uses a white space the scan stops** 
+it is recommanded to use another method to read the user input 
+ ```
+ br := bufio.NewReader(os.Stdin)
+ input,_,_ := br.ReadLine()
+ ```
 
 #### variable types : 
 we can either write a variable like : var a = 4 and golang will imply that it is an int. or we can specify the type for more precision. For example var a int32 = 4
