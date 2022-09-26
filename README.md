@@ -64,6 +64,13 @@ A package contains multiple files. For example a the package main contains many 
 go run .
 ```
 
+### Regular operations :
+
+#### sort array :
+*requires the sort package*
+```
+sort.Ints(numbers)
+```
 
 ### Deallocation of memory : 
 image.png
