@@ -225,11 +225,14 @@ or creating an empty map directly
 ```
 myMap := make(map[string]string)
 ```
-To iterate over a map : 
+**To iterate over a map :** 
 
-![image](https://user-images.githubusercontent.com/42012627/189531301-ed916aa3-7ae6-4c69-b12d-b8be1edac214.png)
+```
+for key,value := rang map{
+	fmt.Printf("key %v and value %v", key, value)
+}
 
-![image](https://user-images.githubusercontent.com/42012627/182373927-c21497a8-b4df-4402-ab7f-9f95a42c18ee.png)
+```
 
 
 #### Structs : 
