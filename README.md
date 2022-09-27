@@ -632,16 +632,15 @@ func consumeMessage(){
 }
 ```
 
-
-
-
 ## Common erros : 
 
 ### fatal error: all goroutines are asleep - deadlock
 This happens when the main goroutine finishes executing but the other goroutines didn't finish. 
 It happened to me because I forgor to add the **&** to the **wg** variable of type WaitGroup
 
-
+### Deadlock : 
+When a goroutine G1 waits for G2 and G2 is waiting for G1
+can happen by waiting on channels. 
 
 
 ## Booking app : 
