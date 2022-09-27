@@ -568,6 +568,47 @@ for{
 }
 ```
 
+### Mutex : 
+Sharing a variable between two goroutines can cause problems if they interfere with each other. For example 
+```
+i :=0
+var wg sync.WaitGroup
+func increase(){
+  i = i + 1
+  wg.Done()
+}
+func main{
+  wg.Add(2)
+    go increase()
+    go increase()
+  wg.Wait()
+  fmt.Println(i)
+}
+```
+The result should normally be equal to 2. Because even with the interleaving of the go instructions the result is always 2.
+**plot twist: it is not true**
+**The interleaving happens at the machine code level !**
+The instruction *i = i + 1* is translated to 3 machine instructions: 
+* read i
+* increment i
+* write i
+example of interleaving the second task had the old version of i, so i end up with the total value of 1.
+
+![image](https://user-images.githubusercontent.com/42012627/192587643-ea5691ba-f4fe-4850-887f-7b316d2131f4.png)
+
+In order stop multiple goroutines from writing to a shared variable in the same time, we use **mutual exclusion** 
+
+example of locks
+
+```
+var mut sync.Mutex
+func increase(){
+  mut.Lock()
+  i = i + 1
+  mut.Unlock()
+}
+```
+
 ## Common erros : 
 
 ### fatal error: all goroutines are asleep - deadlock
