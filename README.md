@@ -609,6 +609,32 @@ func increase(){
 }
 ```
 
+#### Synchronous initialisation : 
+Since we don't know which goroutine is goin to execute first, where do we place the initialization ? The initialization have to be done **once** and in the beginning. *it is recommanded to initialize before starting goroutines, but some time we don't have the choice*. 
+
+We use sync.Once to do initialization or to do a function only once (send a heartbeat to a kafka controller)
+```
+var wg sync.WaitGroup
+var on sync.Once
+
+func main()
+{
+  wg.Add(2)
+  go consumeMessage()
+  go consumeMessage()
+}
+
+func consumeMessage(){
+  on.Do(openConnectionWithKafka)
+  on.Do(sendHeartBeat)
+  sendAck()
+  processmessage()
+}
+```
+
+
+
+
 ## Common erros : 
 
 ### fatal error: all goroutines are asleep - deadlock
