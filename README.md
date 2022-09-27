@@ -525,7 +525,7 @@ func main(){
 **When channels are executing, a synchronization is done implicitly. when a goroutine sends somethink to a channel, it is blocked until an other goroutine receives data from that channel.**
 
 ```
-func prod(a int, b int, chan c){
+func prod(a int, b int, c chan int){
 	c <- a * b 
 	//This goroutine will be blocked untill another goroutine receives the int sent into the channel
 	fmt.Printf("the result of the product is %v", a*b)
